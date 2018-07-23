@@ -138,14 +138,17 @@ var progLangList = []*ProgLang{
 
 	{
 		name: "ActionScript",
+		url:  "https://www.adobe.com/devnet/actionscript.html",
 	},
 
 	{
 		name: "Ada",
+		url:  "https://en.wikipedia.org/wiki/Ada_(programming_language)",
 	},
 
 	{
 		name: "Agda",
+		url:  "http://wiki.portal.chalmers.se/agda/pmwiki.php",
 	},
 
 	{
@@ -398,6 +401,7 @@ var progLangList = []*ProgLang{
 
 	{
 		name: "C",
+		url:  "https://en.wikipedia.org/wiki/The_C_Programming_Language",
 	},
 
 	{
@@ -405,11 +409,13 @@ var progLangList = []*ProgLang{
 	},
 
 	{
-		name: "C sharp",
+		name: "C#",
+		url:  "https://en.wikipedia.org/wiki/C_Sharp_(programming_language)",
 	},
 
 	{
 		name: "C++",
+		url:  "https://en.wikipedia.org/wiki/C++",
 	},
 
 	{
@@ -785,7 +791,7 @@ var progLangList = []*ProgLang{
 	},
 
 	{
-		name: "F Sharp",
+		name: "F#",
 	},
 
 	{
@@ -1175,6 +1181,7 @@ var progLangList = []*ProgLang{
 
 	{
 		name: "Java",
+		url:  "https://en.wikipedia.org/wiki/Java_(programming_language)",
 	},
 
 	{
@@ -1823,6 +1830,7 @@ var progLangList = []*ProgLang{
 
 	{
 		name: "PHP",
+		url:  "https://en.wikipedia.org/wiki/PHP",
 	},
 
 	{
