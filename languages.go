@@ -1,5 +1,7 @@
 package languages
 
+import "time"
+
 // List returns all known languages list.
 //
 // Languages are not sorted by their name.
@@ -24,8 +26,16 @@ type Lang interface {
 	// URL is an http or https location that can be used to find
 	// language information and/or documentation.
 	// In the simplest case, it can be an English wikipedia page.
+	//
 	// Permitted to return an empty string in case there is no known site.
 	URL() string
+
+	// FirstAppearance returns a date that can be interpreted as "creation time"
+	// or "first public announce date".
+	//
+	// If first appearance date is unknown, zero time object is returned,
+	// so Lang.FirstAppearance().IsZero() will return true.
+	FirstAppearance() time.Time
 }
 
 // TypeCheckKind describes when type checking happens.
@@ -61,6 +71,7 @@ type ProgLang struct {
 
 	name string
 	url  string
+	date string
 
 	TypeCheck      TypeCheckKind
 	TypeStrictness TypeStrictnessKind
@@ -72,6 +83,7 @@ type MarkupLang struct {
 
 	name string
 	url  string
+	date string
 }
 
 // langBase implements Lang interface methods.
@@ -79,8 +91,9 @@ type MarkupLang struct {
 type langBase struct {
 	name string
 	url  string
+	date time.Time
 }
 
-func (l *langBase) Name() string { return l.name }
-
-func (l *langBase) URL() string { return l.url }
+func (l *langBase) Name() string               { return l.name }
+func (l *langBase) URL() string                { return l.url }
+func (l *langBase) FirstAppearance() time.Time { return l.date }
