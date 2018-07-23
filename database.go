@@ -3,10 +3,12 @@ package languages
 var progLangList = []*ProgLang{
 	{
 		name: ".QL",
+		url:  "https://en.wikipedia.org/wiki/.QL",
 	},
 
 	{
 		name: "0815",
+		url:  "http://paulo-jorente.de/poncho/esolang/0815/",
 	},
 
 	{
@@ -15,10 +17,12 @@ var progLangList = []*ProgLang{
 
 	{
 		name: "4D",
+		url:  "https://en.wikipedia.org/wiki/4th_Dimension_(software)",
 	},
 
 	{
 		name: "4DOS Batch",
+		url:  "https://en.wikipedia.org/wiki/4DOS",
 	},
 
 	{
@@ -55,14 +59,17 @@ var progLangList = []*ProgLang{
 
 	{
 		name: "8th",
+		url:  "https://8th-dev.com/",
 	},
 
 	{
 		name: "A+",
+		url:  "https://en.wikipedia.org/wiki/A+_(programming_language)",
 	},
 
 	{
 		name: "ABAP",
+		url:  "https://en.wikipedia.org/wiki/ABAP",
 	},
 
 	{
@@ -987,6 +994,7 @@ var progLangList = []*ProgLang{
 
 	{
 		name: "Go",
+		url:  "https://en.wikipedia.org/wiki/Go_(programming_language)",
 	},
 
 	{
