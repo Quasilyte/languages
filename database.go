@@ -5,6 +5,8 @@ import (
 	"time"
 )
 
+// progLangList includes only programming languages.
+// Intermediate list that is used to fill langList.
 var progLangList = []*ProgLang{
 	{
 		name: ".QL",
@@ -2820,6 +2822,8 @@ var progLangList = []*ProgLang{
 	},
 }
 
+// markupLangList includes only markup languages.
+// Intermediate list that is used to fill langList.
 var markupLangList = []*MarkupLang{
 	{
 		name: "HTML",
@@ -2827,6 +2831,8 @@ var markupLangList = []*MarkupLang{
 	},
 }
 
+// langList is an actual language list (well, slice) that includes all kinds
+// of languages. Build during package init from all partial lists.
 var langList []Lang
 
 func init() {
