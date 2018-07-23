@@ -42,6 +42,14 @@ type ProgLang struct {
 	url  string
 }
 
+// MarkupLang is a markup language.
+type MarkupLang struct {
+	langBase
+
+	name string
+	url  string
+}
+
 // langBase implements Lang interface methods.
 // See interface definition itself for documentation on Name(), URL(), etc.
 type langBase struct {

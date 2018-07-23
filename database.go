@@ -2814,6 +2814,13 @@ var progLangList = []*ProgLang{
 	},
 }
 
+var markupLangList = []*MarkupLang{
+	{
+		name: "HTML",
+		url:  "https://en.wikipedia.org/wiki/HTML",
+	},
+}
+
 var langList []Lang
 
 func init() {
@@ -2821,12 +2828,18 @@ func init() {
 	for _, l := range progLangList {
 		langList = append(langList, l)
 	}
+	for _, l := range markupLangList {
+		langList = append(langList, l)
+	}
 	// Now get rid of partial slices.
 	progLangList = nil
+	markupLangList = nil
 
 	for _, l := range langList {
 		switch l := l.(type) {
 		case *ProgLang:
+			l.langBase = langBase{name: l.name, url: l.url}
+		case *MarkupLang:
 			l.langBase = langBase{name: l.name, url: l.url}
 		}
 	}
