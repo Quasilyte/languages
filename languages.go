@@ -38,24 +38,30 @@ type Lang interface {
 	FirstAppearance() time.Time
 }
 
-// TypeCheckKind describes when type checking happens.
-type TypeCheckKind int
+// TypeSystem describes programming language type system properties.
+type TypeSystem struct {
+	Checking   TypeChecking
+	Strictness TypeStrictness
+}
 
-// TypeCheckKind enum.
+// TypeChecking describes when type checking happens.
+type TypeChecking int
+
+// TypeChecking enum.
 const (
-	TypeCheckStatic TypeCheckKind = iota
-	TypeCheckDynamic
-	TypeCheckMixed
+	TypeCheckingStatic TypeChecking = iota
+	TypeCheckingDynamic
+	TypeCheckingMixed
 )
 
-// TypeStrictnessKind describes how strict type system is.
+// TypeStrictness describes how strict type system is.
 // Usually, weak type systems allow implicit conversions while
 // strong type systems require explicit conversions everywhere.
-type TypeStrictnessKind int
+type TypeStrictness int
 
-// TypeStrictnessKind enum.
+// TypeStrictness enum.
 const (
-	TypeStrictnessStrong TypeStrictnessKind = iota
+	TypeStrictnessStrong TypeStrictness = iota
 	TypeStrictnessWeak
 )
 
@@ -74,8 +80,7 @@ type ProgLang struct {
 	url  string
 	date string
 
-	TypeCheck      TypeCheckKind
-	TypeStrictness TypeStrictnessKind
+	TypeSystem TypeSystem
 }
 
 // MarkupLang is a markup language.

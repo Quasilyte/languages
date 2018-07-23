@@ -1004,6 +1004,10 @@ var progLangList = []*ProgLang{
 		name: "Go",
 		url:  "https://en.wikipedia.org/wiki/Go_(programming_language)",
 		date: "10 November 2009",
+		TypeSystem: TypeSystem{
+			Checking:   TypeCheckingStatic,
+			Strictness: TypeStrictnessStrong,
+		},
 	},
 
 	{
