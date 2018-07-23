@@ -28,6 +28,27 @@ type Lang interface {
 	URL() string
 }
 
+// TypeCheckKind describes when type checking happens.
+type TypeCheckKind int
+
+// TypeCheckKind enum.
+const (
+	TypeCheckStatic TypeCheckKind = iota
+	TypeCheckDynamic
+	TypeCheckMixed
+)
+
+// TypeStrictnessKind describes how strict type system is.
+// Usually, weak type systems allow implicit conversions while
+// strong type systems require explicit conversions everywhere.
+type TypeStrictnessKind int
+
+// TypeStrictnessKind enum.
+const (
+	TypeStrictnessStrong TypeStrictnessKind = iota
+	TypeStrictnessWeak
+)
+
 // Note that fields from langBase are duplicated in every Lang implementation.
 // This is intentional, to make initialization of language objects simpler.
 // These duplicated fields are used to initialize langBase fields during init.
@@ -40,6 +61,9 @@ type ProgLang struct {
 
 	name string
 	url  string
+
+	TypeCheck      TypeCheckKind
+	TypeStrictness TypeStrictnessKind
 }
 
 // MarkupLang is a markup language.
