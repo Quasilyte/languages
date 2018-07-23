@@ -66,6 +66,7 @@ const (
 // (which would require to write dull doc-comments for every implementation).
 
 // ProgLang is a programming language.
+// See progLangList.go.
 type ProgLang struct {
 	langBase
 
@@ -78,6 +79,7 @@ type ProgLang struct {
 }
 
 // MarkupLang is a markup language.
+// See markupLangList.go.
 type MarkupLang struct {
 	langBase
 
