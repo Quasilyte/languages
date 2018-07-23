@@ -1,8 +1,13 @@
 package languages
 
 // List returns all known languages list.
+//
+// Languages are not sorted by their name.
+// Use sort.Slice in combination with Lang.Name() method.
 func List() []Lang {
-	return langList
+	list := make([]Lang, len(langList))
+	copy(list, langList)
+	return list
 }
 
 // Lang describes a single formal language.
