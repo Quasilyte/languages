@@ -26,7 +26,7 @@ func init() {
 	}
 
 	var utils initUtils
-	// Push programming languages to the global list.
+	// Push markup languages to the global list.
 	for _, attrs := range markupLangList {
 		var lang MarkupLang
 		for _, attr := range attrs {
