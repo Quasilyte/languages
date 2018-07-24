@@ -4,7 +4,7 @@ import "time"
 
 // List returns all known languages list.
 //
-// Languages are not sorted by their name.
+// Languages are not sorted by their name (order is unspecified).
 // Use sort.Slice in combination with Lang.Name() method.
 func List() []Lang {
 	list := make([]Lang, len(langList))
@@ -66,20 +66,10 @@ const (
 	TypeStrictnessWeak
 )
 
-// Note that fields from langBase are duplicated in every Lang implementation.
-// This is intentional, to make initialization of language objects simpler.
-// These duplicated fields are used to initialize langBase fields during init.
-// langBase is needed to avoid Lang method implementations duplication
-// (which would require to write dull doc-comments for every implementation).
-
 // ProgLang is a programming language.
 // See progLangList.go.
 type ProgLang struct {
 	langBase
-
-	name string
-	url  string
-	date string
 
 	TypeSystem TypeSystem
 }
@@ -88,10 +78,6 @@ type ProgLang struct {
 // See markupLangList.go.
 type MarkupLang struct {
 	langBase
-
-	name string
-	url  string
-	date string
 }
 
 // langBase implements Lang interface methods.
