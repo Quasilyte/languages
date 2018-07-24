@@ -19,6 +19,7 @@ func List() []Lang {
 // Use type assertion to discover type-specific language details.
 // Types that implement Lang:
 //	- ProgLang
+//	- MarkupLang
 type Lang interface {
 	// Name returns a full artificial language name.
 	Name() string
